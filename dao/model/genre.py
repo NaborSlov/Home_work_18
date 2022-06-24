@@ -5,3 +5,5 @@ class Genre(db.Model):
     __tablename__ = 'genre'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+
+    movies_genre = db.relationship('Movie', back_populates='genre', foreign_keys='Movie.genre_id')
